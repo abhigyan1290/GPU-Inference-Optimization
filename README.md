@@ -39,4 +39,4 @@ Prompts repeat fixed prose token IDs to an exact length, and greedy decoding dis
 
 No torch.compile, quantization, profiling traces, vLLM, custom Triton/CUDA kernels, dashboards, or multi-GPU work is implemented. PyTorch's dependency tree includes Triton; no custom Triton work is used. Follow the [roadmap](docs/ROADMAP.md) only after passing each phase's gates.
 
-Read `docs/ENVIRONMENT.md` for local validation results, `docs/DECISIONS.md` for tradeoffs, and `docs/LEARNING_LOG.md` for concepts to explain yourself. The workspace is already inside a home-directory Git repository; no nested repository, commit, or staging of unrelated home files was performed.
+Read `docs/ENVIRONMENT.md` for local validation results, `docs/DECISIONS.md` for tradeoffs, and `docs/LEARNING_LOG.md` for concepts to explain yourself. The lab files live directly at the repository root, alongside LICENSE. Run setup and benchmark commands from this directory.

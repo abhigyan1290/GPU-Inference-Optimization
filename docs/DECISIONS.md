@@ -15,3 +15,7 @@ Accepted: synchronized wall time around generate, eager attention, KV caching, e
 
 ## 004 — Repository boundary
 The requested gpu-inference-lab directory is inside the existing workspace. Git discovery resolves to /home/abhigyandoshi. Following the instruction to initialize only if not already inside a repository, no nested Git repository is created and no home-directory files are staged. Commit only the lab files intentionally; environment and raw results are ignored.
+
+
+## 005 — Repository root layout
+Accepted: move the lab contents directly into GPUInferenceOptimization so README, source, tests, and documentation appear at the top level on GitHub. Preserve the existing repository history, root LICENSE, and local raw results. Recreate the virtual environment at the new location because installed entry points and editable package paths use absolute paths. This supersedes the directory layout in decision 004; benchmark methodology is unchanged.
