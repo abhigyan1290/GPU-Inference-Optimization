@@ -20,10 +20,10 @@ uv run ruff format --check .
 
 Python 3.12, PyTorch 2.6.0 with bundled CUDA 12.4 runtime, and Transformers 4.51.3 are deliberately pinned. The full dependency resolution is in `uv.lock`; `.venv` is local. The CUDA runtime shipped with PyTorch is different from the maximum CUDA version shown by `nvidia-smi`. Neither a Linux display driver nor a separate CUDA toolkit is required here. `uv` was installed in `~/.local/bin` without modifying shell startup files.
 
-The default is the ungated `HuggingFaceTB/SmolLM2-135M`, a real 135M-parameter base causal LM. FP16 weights are approximately 270 MB before runtime, KV cache, and activations; this is conservative for the detected 8 GB GPU. Base-model completions are not instruction-tuned chat responses. First run downloads weights into the Hugging Face cache. For a different model, inspect its size and available VRAM first; arbitrary model sizes are not automatically admitted or guaranteed to fit.
+The default is `google/gemma-3-1b-pt`, the pretrained text-only Gemma 3 1B model, in BF16. Budget roughly 2–3 GB for weights plus runtime, KV cache, and activations; begin with the small smoke workload on the 8 GB GPU. This was the model that was used for this project.
 
 ```bash
-uv run --locked python -m benchmarks.baseline --model HuggingFaceTB/SmolLM2-135M \
+uv run --locked python -m benchmarks.baseline --model google/gemma-3-1b-pt --dtype bfloat16 \
   --batch-size 1 --prompt-length 512 --output-length 128 --warmup 3 --runs 10
 ```
 

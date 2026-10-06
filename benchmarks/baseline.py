@@ -28,7 +28,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--revision", default="main")
-    parser.add_argument("--dtype", choices=["float16", "float32", "bfloat16"], default="float16")
+    parser.add_argument("--dtype", choices=["float16", "float32", "bfloat16"], default="bfloat16")
     parser.add_argument("--batch-size", type=positive, default=1)
     parser.add_argument("--prompt-length", type=positive, default=512)
     parser.add_argument("--output-length", type=positive, default=128)

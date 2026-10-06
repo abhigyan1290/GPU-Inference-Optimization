@@ -3,7 +3,7 @@
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-DEFAULT_MODEL = "HuggingFaceTB/SmolLM2-135M"
+DEFAULT_MODEL = "google/gemma-3-1b-pt"
 
 
 def load_model(name: str, revision: str, dtype: torch.dtype):
